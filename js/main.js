@@ -2,21 +2,59 @@
 window.addEventListener("load", function() {
 		var contenedor = document.getElementById("contenedor");
 		var lista = document.getElementById("lista");
-		var form =document.createElement("form");
-		var input =document.createElement("input");
-		var boton =document.createElement("button");
-		var botxt = document.createTextNode("Guardar");
-		var icon = document.createElement("icon");
 
 		lista.addEventListener("click", function() {
 		lista.style.display = 'none';
-		contenedor.insertBefore(form,contenedor.childNodes[0]);
-		form.insertBefore(input,form.childNodes[0]);
-		form.insertBefore(boton,form.childNodes[1]);
-		boton.appendChild(botxt);
-		form.insertBefore(boton,form.childNodes[2]);
-		icon.classList.add("icon-cross");
+		anidar();
+		
 		});
+
+		function anidar(){
+		var form =document.createElement("form");
+		contenedor.insertBefore(form,contenedor.childNodes[0]);
+
+		var input =document.createElement("input");
+		form.insertBefore(input,form.childNodes[0]);
+		input.classList.add("ipt");
+		input.classList.add("form-control")
+
+		var boton =document.createElement("button");
+		form.insertBefore(boton,form.childNodes[1]);
+		boton.classList.add("btn-1");
+		boton.classList.add("btn-success", "btn-block", "btn", "btn-sm");
+
+
+		var botxt = document.createTextNode("Guardar");
+		boton.appendChild(botxt);
+		
+		var icon = document.createElement("icon");
+		form.insertBefore(icon,form.childNodes[2]);
+		icon.classList.add("icon-cross");
+		icon.classList.add("cross");
+		
+		boton.addEventListener("click", function(e){
+		e.preventDefault();
+
+		input.style.display = 'none';
+		boton.style.display = 'none';
+		icon.style.display = 'none';
+
+		var contenido = input.value;
+		var otraLista = document.createElement("div");
+		otraLista.innerText = contenido;
+		form.insertBefore(otraLista,form.childNodes[0]);
+
+		var enlace = document.createElement("a")
+		form.insertBefore(enlace,form.childNodes[1]);
+		var atxt = document.createTextNode("Añadir una Tarjeta");
+		enlace.appendChild(atxt);
+		anidar();
+
+		lista.style.display ='block'
+		})
+		}
+
+
 	});
 
              

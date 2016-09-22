@@ -8,11 +8,17 @@ body{
 span{
   background: white;
 }
-button {
-	display: inline-block;
-	margin: 5px;
+
+.ipt{
+	display: block;
 }
-.icon-cross:before {
-  content: "\ea0f";
-  color: black;
+.btn-1 {
+	display: block;
+	margin: 5px;
+	float: left;
+	width: 70% !important;
+}
+.cross{
+  color: white;
+display: inline-block;
 }
