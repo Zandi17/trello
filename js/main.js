@@ -6,17 +6,20 @@ window.addEventListener("load", function() {
 		lista.addEventListener("click", function() {
 		lista.style.display = 'none';
 		anidar();
-		
+				
+		contenedor.classList.add("pao")
 		});
 
 		function anidar(){
 		var form =document.createElement("form");
 		contenedor.insertBefore(form,contenedor.childNodes[0]);
+		form.classList.add("fondo")
 
 		var input =document.createElement("input");
 		form.insertBefore(input,form.childNodes[0]);
 		input.classList.add("ipt");
-		input.classList.add("form-control")
+		input.classList.add("form-control");
+		input.placeholder = "Añadir una lista ...";
 
 		var boton =document.createElement("button");
 		form.insertBefore(boton,form.childNodes[1]);
@@ -32,6 +35,7 @@ window.addEventListener("load", function() {
 		icon.classList.add("icon-cross");
 		icon.classList.add("cross");
 		
+		
 		boton.addEventListener("click", function(e){
 		e.preventDefault();
 
@@ -42,13 +46,14 @@ window.addEventListener("load", function() {
 		var contenido = input.value;
 		var otraLista = document.createElement("div");
 		otraLista.innerText = contenido;
-		form.insertBefore(otraLista,form.childNodes[0]);
+		contenedor.insertBefore(otraLista,contenedor.childNodes[0]);
 
 		var enlace = document.createElement("a")
-		form.insertBefore(enlace,form.childNodes[1]);
+		contenedor.insertBefore(enlace,contenedor.childNodes[1]);
 		var atxt = document.createTextNode("Añadir una Tarjeta");
 		enlace.appendChild(atxt);
 		anidar();
+
 
 		lista.style.display ='block'
 		})

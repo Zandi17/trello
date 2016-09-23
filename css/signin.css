@@ -1,14 +1,39 @@
 body{
-  background-color: grey;
+  background: url(../img/indie2.jpg);
+  background-size: 100%;
+}
+h1{
+	color: white;
+	text-align: center;
+
 }
 #contenedor {
 	display: inline-block;
-	background-color: black;
-}
-span{
-  background: white;
 }
 
+span{
+	display: inline-block;
+	border-radius: 	5px;
+	height: 40px;
+	width: 	190px;
+	color: 	white;
+	background: #778899;
+	padding: 10px;
+}
+span:hover{
+	background-color : #B0C4DE ;
+}
+.pao{
+	padding-top: 10px;
+	height: 100px;
+	width: 	190px;
+	color: 	white;
+	border-radius: 	5px;
+	background: #778899;
+}
+.otraLista{
+	background: #E2E4E6;
+}
 .ipt{
 	display: block;
 }
